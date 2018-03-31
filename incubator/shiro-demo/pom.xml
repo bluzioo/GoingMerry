@@ -78,6 +78,8 @@
             <version>1.0.4</version>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- Servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
