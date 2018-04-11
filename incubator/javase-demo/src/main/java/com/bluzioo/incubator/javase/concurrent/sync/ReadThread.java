@@ -13,8 +13,11 @@ public class ReadThread implements Runnable {
 
         while (true) {
             long start = System.currentTimeMillis();
-            String str = bufferData.read();
-            System.out.println(Thread.currentThread().getName() + "->" + str + "->" + (System.currentTimeMillis()-start));
+            for (int i=0; i<10; i++) {
+                String str = bufferData.read();
+                System.out.println(Thread.currentThread().getName() + "->" + str);
+            }
+            System.out.println(Thread.currentThread().getName() + "->" + (System.currentTimeMillis()-start));
         }
 
     }
