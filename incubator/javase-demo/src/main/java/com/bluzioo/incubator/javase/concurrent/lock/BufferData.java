@@ -43,6 +43,7 @@ public class BufferData {
                 buffer[i] = ch;
                 sleep(100);
             }
+
         } finally {
             lock.writeUnlock();
         }
@@ -50,7 +51,7 @@ public class BufferData {
 
     private void sleep(long ms) {
         try {
-            Thread.sleep(ms);
+            Thread.currentThread().sleep(ms);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

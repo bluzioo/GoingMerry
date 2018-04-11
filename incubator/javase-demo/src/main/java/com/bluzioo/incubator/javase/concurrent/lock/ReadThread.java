@@ -18,7 +18,7 @@ public class ReadThread implements Runnable {
                     String str = bufferData.read();
                     System.out.println(Thread.currentThread().getName() + "->" + str);
                 }
-                System.out.println(Thread.currentThread().getName() + "->" + (System.currentTimeMillis()-start));
+                System.out.println(Thread.currentThread().getName() + "---------------->" + (System.currentTimeMillis()-start));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -9,10 +9,10 @@ public class MyReadWriteLock {
 
 
     public synchronized void readLock() throws InterruptedException {
-        if (writeCount > 0 || (writePriority &&  waitingWriteCount > 0)) {
+        while (writeCount > 0 || (writePriority &&  waitingWriteCount > 0)) {
             wait();
         }
-        readCount ++;
+        readCount++;
     }
 
     public synchronized void readUnlock() {
@@ -24,7 +24,7 @@ public class MyReadWriteLock {
     public synchronized void writeLock() throws InterruptedException {
         waitingWriteCount++;
         try {
-            if (readCount > 0 || writeCount > 0) {
+            while (readCount > 0 || writeCount > 0) {
                 wait();
             }
         } finally {
