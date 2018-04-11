@@ -1,14 +1,27 @@
 package com.bluzioo.incubator.javase.concurrent.sync;
 
 public class WriteThread implements Runnable {
-    private Data data;
+    private BufferData bufferData;
+    private String str;
+    private int index = 0;
 
-    public WriteThread(Data data) {
-        this.data = data;
+    public WriteThread(BufferData bufferData, String str) {
+        this.bufferData = bufferData;
+        this.str = str;
     }
 
     @Override
     public void run() {
-        data.write("abcdefgh");
+        while (true) {
+            bufferData.write(next());
+        }
+    }
+
+    private char next() {
+        index ++;
+        if (index >= str.length()) {
+            index = 0;
+        }
+        return str.charAt(index);
     }
 }
