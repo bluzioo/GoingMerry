@@ -51,5 +51,6 @@
 
     <bean class="demo.shiro.web.exception.DefaultExceptionHandler"/>
 
+    <import resource="spring-mvc-shiro.xml"/>
 
 </beans>
