@@ -10,10 +10,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>shiro-demo</module>
-        <module>javase-demo</module>
+        <module>demo-javase</module>
         <module>demo-javaee</module>
-        <module>demo-ws</module>
+        <module>demo-jaxws</module>
+        <module>demo-shiro</module>
     </modules>
 
 </project>
