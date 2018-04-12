@@ -1,11 +1,11 @@
-package demo.ws.hello;
+package demo.javaee.ws;
 
 import javax.jws.WebService;
 
 @WebService(
         serviceName = "HelloService",
         portName = "HelloServicePort",
-        endpointInterface = "demo.ws.hello.HelloService"
+        endpointInterface = "demo.javaee.ws.HelloService"
 )
 public class HelloServiceImpl implements HelloService {
     @Override

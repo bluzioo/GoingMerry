@@ -1,4 +1,4 @@
-package demo.ws.hello;
+package demo.javaee.ws;
 
 import javax.jws.WebService;
 

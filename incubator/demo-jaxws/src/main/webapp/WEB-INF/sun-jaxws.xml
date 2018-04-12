@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+
+    <endpoint name="userInfo" implementation="demo.jaxws.UserInfoServiceImpl" url-pattern="/wsservice/queryUserInfo" />
+
+</endpoints>

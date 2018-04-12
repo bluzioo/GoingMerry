@@ -1,4 +1,4 @@
-package demo.ws.hello;
+package demo.javaee.ws;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
