@@ -15,6 +15,28 @@
         <module>demo-jaxws</module>
         <module>demo-shiro</module>
         <module>demo-log</module>
+        <module>demo-algorithms</module>
     </modules>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+    </properties>
+
+    <build>
+        <finalName>incubator</finalName>
+        <plugins>
+            <!-- Compiler 插件, 设定JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

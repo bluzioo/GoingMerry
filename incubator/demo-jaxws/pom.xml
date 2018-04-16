@@ -13,8 +13,6 @@
     <packaging>war</packaging>
 
     <properties>
-
-        <jdk.version>1.8</jdk.version>
         <tomcat.version>2.1</tomcat.version>
         <webserver.port>8181</webserver.port>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,17 +40,6 @@
 
     <build>
         <plugins>
-            <!-- Compiler 插件, 设定JDK版本 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
-                <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
-                    <showWarnings>true</showWarnings>
-                </configuration>
-            </plugin>
 
             <!-- tomcat7插件 -->
             <plugin>
