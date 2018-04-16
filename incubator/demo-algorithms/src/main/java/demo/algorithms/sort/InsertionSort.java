@@ -10,7 +10,6 @@ import static demo.algorithms.Print.println;
  */
 public class InsertionSort {
 
-
     public static void sort (int[] arr) {
         if (arr.length == 1) return;
 
@@ -28,13 +27,19 @@ public class InsertionSort {
 
 
     public static void main(String[] args) {
-        int[] arr = RandomArray.random(50);
+        int[] arr = RandomArray.random(1000000);
 
-        println(Arrays.toString(arr));
+        long start = System.currentTimeMillis();
 
         sort(arr);
 
-        println(Arrays.toString(arr));
+        println("taken time: " + (System.currentTimeMillis()-start));
+
+        for(int i=0; i<arr.length-1; i++) {
+            if(arr[i] > arr[i+1]){
+                println(false);
+            }
+        }
     }
 
 
