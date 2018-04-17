@@ -1,4 +1,4 @@
-package com.bluzioo.incubator.javase.concurrent.lock;
+package demo.javase.concurrent.lock;
 
 public class ReadThread implements Runnable {
 

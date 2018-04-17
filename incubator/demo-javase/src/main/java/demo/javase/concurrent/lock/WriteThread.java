@@ -1,4 +1,4 @@
-package com.bluzioo.incubator.javase.concurrent.sync;
+package demo.javase.concurrent.lock;
 
 public class WriteThread implements Runnable {
     private BufferData bufferData;
@@ -13,15 +13,20 @@ public class WriteThread implements Runnable {
     @Override
     public void run() {
         while (true) {
-            bufferData.write(next());
+            try {
+                bufferData.write(next());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     private char next() {
+        char c = str.charAt(index);
         index ++;
         if (index >= str.length()) {
             index = 0;
         }
-        return str.charAt(index);
+        return c;
     }
 }

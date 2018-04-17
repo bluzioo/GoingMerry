@@ -1,8 +1,4 @@
-package com.bluzioo.incubator.javase.concurrent.lock;
-
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
+package demo.javase.concurrent.lock;
 
 public class BufferData {
 

@@ -1,4 +1,4 @@
-package com.bluzioo.incubator.javase.concurrent.sync;
+package demo.javase.concurrent.sync;
 
 public class BufferData {
 
