@@ -5,17 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.bluzioo</groupId>
-    <artifactId>incubator</artifactId>
+    <artifactId>gm-incubator</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>demo-javase</module>
-        <module>demo-javaee</module>
-        <module>demo-jaxws</module>
-        <module>demo-shiro</module>
-        <module>demo-log</module>
-        <module>demo-algorithms</module>
+        <module>javase</module>
+        <module>javaee</module>
+        <module>jaxws</module>
+        <module>shiro</module>
+        <module>log</module>
+        <module>algorithms</module>
     </modules>
 
     <properties>
@@ -23,7 +23,7 @@
     </properties>
 
     <build>
-        <finalName>incubator</finalName>
+        <finalName>gm-incubator</finalName>
         <plugins>
             <!-- Compiler 插件, 设定JDK版本 -->
             <plugin>

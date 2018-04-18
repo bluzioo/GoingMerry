@@ -6,7 +6,7 @@
         version="3.0"
         metadata-complete="true">
 
-    <display-name>demo-shiro</display-name>
+    <display-name>shiro</display-name>
 
     <!-- Spring配置文件开始  -->
     <context-param>

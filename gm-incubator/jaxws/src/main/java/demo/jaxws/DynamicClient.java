@@ -10,7 +10,7 @@ public class DynamicClient {
 
     public static void main(String[] args) throws MalformedURLException {
 
-        URL wsdl = new URL("http://localhost:8181/demo-jaxws/wsservice/queryUserInfo?wsdl");
+        URL wsdl = new URL("http://localhost:8181/jaxws/wsservice/queryUserInfo?wsdl");
         QName serviceName = new QName("http://jaxws.demo/", "UserInfoServiceImplService");
         QName portName = new QName("http://jaxws.demo/", "UserInfoServiceImplPort");
         Service service = Service.create(wsdl, serviceName);
