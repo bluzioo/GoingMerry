@@ -17,6 +17,7 @@
         <module>log</module>
         <module>algorithms</module>
         <module>design-pattern</module>
+        <module>spring</module>
     </modules>
 
     <properties>

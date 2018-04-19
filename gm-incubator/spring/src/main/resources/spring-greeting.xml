@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 扫描指定包（将 @Component 注解的类自动定义为 Spring Bean） -->
+    <context:component-scan base-package="demo.spring.aop.declare"/>
+
+    <!-- 对方法的增强叫做 Weaving（织入）-->
+    <!-- 配置一个代理 -->
+    <bean id="greetingProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interfaces" value="demo.spring.aop.declare.Greeting"/> <!-- 需要代理的接口 -->
+        <property name="target" ref="greetingImpl"/>       <!-- 接口实现类 -->
+        <property name="interceptorNames">                 <!-- 拦截器名称（也就是增强类名称，Spring Bean 的 id） -->
+            <list>
+                <value>greetingAroundAdvice</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 对类的增强叫做 Introduction（引入）-->
+    <!--<bean id="greetingProxy" class="org.springframework.aop.framework.ProxyFactoryBean">-->
+        <!--<property name="interfaces" value="aop.demo.Apology"/>          &lt;!&ndash; 需要动态实现的接口 &ndash;&gt;-->
+        <!--<property name="target" ref="greetingImpl"/>                    &lt;!&ndash; 目标类 &ndash;&gt;-->
+        <!--<property name="interceptorNames" value="greetingIntroAdvice"/> &lt;!&ndash; 引入增强 &ndash;&gt;-->
+        <!--<property name="proxyTargetClass" value="true"/>                &lt;!&ndash; 代理目标类（默认为 false，代理接口） &ndash;&gt;-->
+    <!--</bean>-->
+
+</beans>
