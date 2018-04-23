@@ -13,11 +13,16 @@
         <module>javase</module>
         <module>javaee</module>
         <module>jaxws</module>
-        <module>shiro</module>
+
         <module>log</module>
+
         <module>algorithms</module>
         <module>design-pattern</module>
+
         <module>spring</module>
+
+        <module>apache-shiro</module>
+        <module>apache-cxf</module>
     </modules>
 
     <properties>
