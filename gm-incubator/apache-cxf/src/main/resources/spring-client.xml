@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://cxf.apache.org/jaxws
+       http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <!--<bean id="factoryBean" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">-->
+        <!--<property name="serviceClass" value="demo.cxf.HelloService"/>-->
+        <!--<property name="address" value="http://localhost:8080/ws/soap/hello"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="helloService" factory-bean="factoryBean" factory-method="create"/>-->
+
+    <jaxws:client id="helloService"
+                  serviceClass="demo.cxf.HelloService"
+                  address="http://localhost:8080/ws/soap/hello"/>
+
+</beans>
