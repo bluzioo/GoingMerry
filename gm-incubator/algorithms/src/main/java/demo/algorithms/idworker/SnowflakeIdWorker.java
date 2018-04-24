@@ -1,6 +1,13 @@
 package demo.algorithms.idworker;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 /**
  * Twitter_Snowflake<br>
  * SnowFlake的结构如下(每部分用-分开):<br>
@@ -57,6 +64,16 @@ public class SnowflakeIdWorker {
 
     /** 上次生成ID的时间截 */
     private long lastTimestamp = -1L;
+
+
+    private static class SnowflakeIdWorkerHolder {
+        private static final SnowflakeIdWorker instance = new SnowflakeIdWorker(0, 0);
+    }
+
+    public static SnowflakeIdWorker getInstance(){
+        return SnowflakeIdWorkerHolder.instance;
+    }
+
 
     //==============================Constructors=====================================
     /**
@@ -134,14 +151,41 @@ public class SnowflakeIdWorker {
         return System.currentTimeMillis();
     }
 
+
+
+
     //==============================Test=============================================
     /** 测试 */
     public static void main(String[] args) {
-        SnowflakeIdWorker idWorker = new SnowflakeIdWorker(0, 0);
-        for (int i = 0; i < 1000; i++) {
-            long id = idWorker.nextId();
-            System.out.println(Long.toBinaryString(id));
-            System.out.println(id);
+        long avg = 0;
+        for (int k = 0; k < 10; k++) {
+            List<Callable<Long>> partitions = new ArrayList<>();
+            final SnowflakeIdWorker idGen = SnowflakeIdWorker.getInstance();
+            for (int i = 0; i < 1000000; i++) {
+                partitions.add(() -> idGen.nextId());
+            }
+            ExecutorService executorPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+            try {
+                long s = System.currentTimeMillis();
+                executorPool.invokeAll(partitions, 10000, TimeUnit.SECONDS);
+                long s_avg = System.currentTimeMillis() - s;
+                avg += s_avg;
+                System.out.println("完成时间需要: " + s_avg / 1.0e3 + "秒");
+                executorPool.shutdown();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+        System.out.println("平均完成时间需要: " + avg / 10 / 1.0e3 + "秒");
     }
+
+
+//    public static void main(String[] args) {
+//        SnowflakeIdWorker idWorker = new SnowflakeIdWorker(0, 0);
+//        for (int i = 0; i < 1000; i++) {
+//            long id = idWorker.nextId();
+//            System.out.println(Long.toBinaryString(id));
+//            System.out.println(id);
+//        }
+//    }
 }
