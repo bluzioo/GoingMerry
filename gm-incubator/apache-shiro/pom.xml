@@ -132,7 +132,7 @@
 
 
     <build>
-        <finalName>shiro</finalName>
+        <finalName>apache-shiro</finalName>
         <plugins>
 
             <plugin>
