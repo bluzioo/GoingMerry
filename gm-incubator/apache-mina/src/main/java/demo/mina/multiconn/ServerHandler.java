@@ -50,7 +50,7 @@ public class ServerHandler extends IoHandlerAdapter
     public void messageReceived(IoSession session, Object message ) throws Exception
     {
         String str = message.toString();
-        System.out.println("receive msg:" +str);
+        System.out.println(str);
         if( str.trim().equalsIgnoreCase("quit") ) {
             session.closeNow();
             return;
@@ -58,9 +58,9 @@ public class ServerHandler extends IoHandlerAdapter
 
         // Send the current date back to the client
         Date date = new Date();
+        session.write( str + "----------" + date.toString() + "---------" + Thread.currentThread().getName());
+        System.out.println(str + "----------" + Thread.currentThread().getName());
         Thread.sleep(1000);
-        session.write( date.toString() );
-        System.out.println("Message written...");
     }
 
     /**

@@ -31,11 +31,12 @@ public class ClientHandler extends IoHandlerAdapter {
 
     @Override
     public void messageReceived(IoSession session, Object message) throws Exception {
+        System.out.println(message + "--------" + Thread.currentThread().getName());
     }
 
     @Override
     public void messageSent(IoSession session, Object message) throws Exception {
-
+        System.out.println(message + "--------" + "sent" + "-----" +Thread.currentThread().getName() );
     }
 
     @Override
