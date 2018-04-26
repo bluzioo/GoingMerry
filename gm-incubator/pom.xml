@@ -23,6 +23,7 @@
 
         <module>apache-shiro</module>
         <module>apache-cxf</module>
+        <module>apache-mina</module>
     </modules>
 
     <properties>
