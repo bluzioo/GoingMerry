@@ -1,7 +1,6 @@
 package demo.mina.multiconn;
 
 import com.google.common.util.concurrent.RateLimiter;
-import jdk.nashorn.internal.objects.Global;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.service.IoConnector;
 import org.apache.mina.core.session.IoSession;
