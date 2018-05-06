@@ -24,6 +24,7 @@
         <module>apache-shiro</module>
         <module>apache-cxf</module>
         <module>apache-mina</module>
+        <module>apache-thrift</module>
     </modules>
 
     <properties>
