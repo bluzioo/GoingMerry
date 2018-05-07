@@ -1,5 +1,8 @@
 package demo.design.chain;
 
+/**
+ * 责任链模式客户端
+ */
 public class ChainClient {
 
     public static void main(String[] args) {
