@@ -9,21 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 public class HelloController {
 
-    @Value("${demo.profile}")
-    private String profile;
-
-
     @RequestMapping("hello")
     @ResponseBody
     public String hello() {
         return "hello ";
     }
 
-
-    @RequestMapping("profile")
-    @ResponseBody
-    public String profile() {
-        return "profile is " + profile;
-    }
 
 }
